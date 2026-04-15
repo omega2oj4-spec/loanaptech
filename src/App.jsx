@@ -4,7 +4,8 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import About from './components/About'
-import Privacy from './components/Privacy'  
+import Privacy from './components/Privacy' 
+import Footer from './components/Footer' 
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
     <>
       <About />
       <Privacy />
+      <Footer />
     </>
   )
 }
