@@ -40,7 +40,7 @@ if (!formData.name || !formData.email || !formData.phone || !formData.password |
         }
 
         try {
-            const response = await fetch('https://loanaptech-1-dloz.onrender.com/api/auth/register', {
+            const response = await fetch('https://loanaptech-69ab.onrender.com/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
