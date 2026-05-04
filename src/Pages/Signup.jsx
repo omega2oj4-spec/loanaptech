@@ -40,7 +40,7 @@ if (!formData.name || !formData.email || !formData.phone || !formData.password |
         }
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/register', {
+            const response = await fetch('https://loanaptech-1-dloz.onrender.com/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ if (!formData.name || !formData.email || !formData.phone || !formData.password |
                     navigate('/login');
                 }, 3000);
             } else {
-                setError(data.message || 'Registration failed');
+                setError(data.error || 'Registration failed');
             }
         } catch (error) {
             setError('An error occurred during registration');

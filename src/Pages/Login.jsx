@@ -33,7 +33,7 @@ const Login = () => {
         setLoading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch('https://loanaptech-1-dloz.onrender.com/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -53,7 +53,7 @@ const Login = () => {
                     navigate('/Dashboard'); // Redirect to dashboard after successful login
                 }, 3000);
             } else {
-                setError(data.message || 'Login failed');
+                setError(data.error || 'Login failed');
             }
         } catch (error) {
             setError('An error occurred during login');

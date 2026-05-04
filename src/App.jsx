@@ -3,28 +3,35 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Ad
 
 import './App.css'
 import About from './components/About'
-import Privacy from './components/Privacy' 
-import Footer from './components/Footer' 
+import Privacy from './components/Privacy'
+import Footer from './components/Footer'
 import Contact from './components/Contact'
 import Signup from './Pages/Signup'
 import Navbar from './components/Navbar';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
+import Faq from './components/Faq';
+import Terms from './components/Terms';
 import Dashboard from './Pages/Dashboard';
+import Loan from './components/Loan';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-       <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/login" element={<Login />} />
-<Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/loan" element={<Loan />} />
           <Route path="*" element={<About />} />
+
         </Routes>
         <Navbar />
         <Footer />
