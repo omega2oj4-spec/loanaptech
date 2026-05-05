@@ -12,7 +12,7 @@ connectDB();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-      "https://loanaptech-drab.vercel.app",
+      "https://loanaptech-drab.vercel.app/",
   ],
   
 
