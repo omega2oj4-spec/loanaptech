@@ -49,9 +49,13 @@ const Dashboard = () => {
         setLoans(loansData.loans);
       }
 
-    } catch (err) {
-      setError(err.message);
-      navigate("/login");
+    }  catch (err) {
+  if (err.message === "Not authenticated") {
+    navigate("/login");
+  } else {
+    setError(err.message);
+  
+}
     } finally {
       setLoading(false);
     }
