@@ -32,10 +32,7 @@ const ApplyLoan = () => {
       setLoading(true);
       setError("");
 
-      const userResponse = await fetch("https://loanaptech-69ab.onrender.com/api/loans/apply", {
-        credentials: "include",
-      });
-      
+    
 
       const loansResponse = await fetch(
         "https://loanaptech-69ab.onrender.com/api/loans/my-loans",
@@ -98,7 +95,7 @@ const ApplyLoan = () => {
       }
 
       alert("Application Successful");
-      navigate("/loans");
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
     } finally {
