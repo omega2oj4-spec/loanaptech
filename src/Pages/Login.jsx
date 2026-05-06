@@ -55,7 +55,7 @@ const Login = () => {
             } else {
                 setError(data.error || 'Login failed');
             }
-            localStorage.setItem('user', JSON.stringify(data.user));
+           localStorage.setItem('token', data.token);
         } catch (error) {
             setError('An error occurred during login');
         } finally {
