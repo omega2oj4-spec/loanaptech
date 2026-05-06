@@ -94,8 +94,7 @@ const ApplyLoan = () => {
         throw new Error(data.error || "Loan application failed");
       }
 
-      alert("Application Successful");
-      navigate("/dashboard");
+      window.location.href = "/dashboard";
     } catch (err) {
       setError(err.message);
     } finally {
