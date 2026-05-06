@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import "./Loan.css";
+import "./ApplyLoan.css";
 import React, { useState } from 'react';
 
-const Loan = () => {
+const ApplyLoan = () => {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -103,4 +103,4 @@ const Loan = () => {
   );
 };
 
-export default Loan;
+export default ApplyLoan;

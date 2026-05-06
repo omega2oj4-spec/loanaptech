@@ -13,7 +13,7 @@ import Login from './Pages/Login';
 import Faq from './components/Faq';
 import Terms from './components/Terms';
 import Dashboard from './Pages/Dashboard';
-import Loan from './components/Loan';
+import ApplyLoan from './components/ApplyLoan';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/loan" element={<Loan />} />
+          <Route path="/apply" element={<ApplyLoan />} />
           <Route path="*" element={<About />} />
 
         </Routes>

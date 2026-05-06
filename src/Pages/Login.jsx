@@ -50,7 +50,7 @@ const Login = () => {
             if (response.ok) {
                 setSuccess('Login successful! Redirecting...');
                 setTimeout(() => {
-                    navigate('/Dashboard'); // Redirect to dashboard after successful login
+                    navigate('/dashboard'); // Redirect to dashboard after successful login
                 }, 3000);
             } else {
                 setError(data.error || 'Login failed');
