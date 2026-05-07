@@ -7,8 +7,7 @@ const ApplyLoan = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    
     amount: "",
     tenure: "",
     purpose: "",
@@ -25,7 +24,7 @@ const ApplyLoan = () => {
     e.preventDefault();
     setError("");
 
-    if (!formData.name || !formData.email || !formData.amount || !formData.purpose || !formData.tenure) {
+    if ( !formData.amount || !formData.purpose || !formData.tenure) {
       setError("Please fill all fields");
       return;
     }
@@ -38,8 +37,7 @@ const ApplyLoan = () => {
         headers: { "Content-Type": "application/json" },
         credentials: "include",
         body: JSON.stringify({
-          email: formData.email,
-          name: formData.name,
+      
           amount: formData.amount,
           duration: formData.tenure,
           purpose: formData.purpose,
@@ -66,15 +64,15 @@ const ApplyLoan = () => {
         <form className="apply-form" onSubmit={handleSubmit}>
           {error && <p style={{ color: "red" }}>{error}</p>}
           
-          <div className="input-group">
-            <label>Full Name</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          </div>
+         <div className="input-group">
+  <label>Full Name</label>
+  <input type="text" value={user?.name || ''} readOnly />
+</div>
 
-          <div className="input-group">
-            <label>Email Address</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          </div>
+<div className="input-group">
+  <label>Email Address</label>
+  <input type="email" value={user?.email || ''} readOnly />
+</div>
 
           <div className="input-group">
             <label>Loan Amount ($)</label>
