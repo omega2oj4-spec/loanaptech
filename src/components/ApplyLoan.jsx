@@ -4,10 +4,11 @@ import "./ApplyLoan.css";
 
 const ApplyLoan = () => {
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem('user'));
+  const token = localStorage.getItem('token');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    
     amount: "",
     tenure: "",
     purpose: "",
@@ -24,7 +25,7 @@ const ApplyLoan = () => {
     e.preventDefault();
     setError("");
 
-    if ( !formData.amount || !formData.purpose || !formData.tenure) {
+    if (!formData.amount || !formData.purpose || !formData.tenure) {
       setError("Please fill all fields");
       return;
     }
@@ -34,10 +35,12 @@ const ApplyLoan = () => {
     try {
       const response = await fetch("https://loanaptech-69ab.onrender.com/api/loans/apply", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`
+        },
         credentials: "include",
         body: JSON.stringify({
-      
           amount: formData.amount,
           duration: formData.tenure,
           purpose: formData.purpose,
@@ -49,7 +52,7 @@ const ApplyLoan = () => {
       if (!response.ok) throw new Error(data.error || "Application failed");
 
       alert("Application Successful");
-      navigate("/dashboard");  // or "/loans" as you prefer
+      navigate("/dashboard");
     } catch (err) {
       setError(err.message);
     } finally {
@@ -63,16 +66,16 @@ const ApplyLoan = () => {
         <h1 className="apply-title">Apply For A Loan</h1>
         <form className="apply-form" onSubmit={handleSubmit}>
           {error && <p style={{ color: "red" }}>{error}</p>}
-          
-         <div className="input-group">
-  <label>Full Name</label>
-  <input type="text" value={user?.name || ''} readOnly />
-</div>
 
-<div className="input-group">
-  <label>Email Address</label>
-  <input type="email" value={user?.email || ''} readOnly />
-</div>
+          <div className="input-group">
+            <label>Full Name</label>
+            <input type="text" value={user?.name || ''} readOnly />
+          </div>
+
+          <div className="input-group">
+            <label>Email Address</label>
+            <input type="email" value={user?.email || ''} readOnly />
+          </div>
 
           <div className="input-group">
             <label>Loan Amount ($)</label>
