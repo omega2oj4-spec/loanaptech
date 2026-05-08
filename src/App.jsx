@@ -32,7 +32,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/apply" element={<ApplyLoan />} />
           <Route path="*" element={<About />} />
-          <Route path="/loans" element={<LoanDetails />} />
+          <Route path="/loan/:id" element={<LoanDetails />} />
 
         </Routes>
         <Navbar />
