@@ -31,8 +31,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/apply" element={<ApplyLoan />} />
+           <Route path="/loans/:id" element={<LoanDetails />} />
           <Route path="*" element={<About />} />
-          <Route path="/loans/:id" element={<LoanDetails />} />
+         
 
         </Routes>
         <Navbar />
