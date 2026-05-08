@@ -14,6 +14,7 @@ import Faq from './components/Faq';
 import Terms from './components/Terms';
 import Dashboard from './Pages/Dashboard';
 import ApplyLoan from './components/ApplyLoan';
+import LoanDetails from './Pages/LoanDetails';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/apply" element={<ApplyLoan />} />
           <Route path="*" element={<About />} />
+          <Route path="/loans" element={<LoanDetails />} />
 
         </Routes>
         <Navbar />
